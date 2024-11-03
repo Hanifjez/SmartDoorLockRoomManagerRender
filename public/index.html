@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Door Lock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Smart Door Lock Key Code Manager</h1>
+        <form id="keyCodeForm">
+            <input type="text" id="keyCodeInput" placeholder="Enter Key Code" required>
+            <input type="text" id="descriptionInput" placeholder="Enter Description" required>
+            <label>
+                <input type="checkbox" id="activeInput" checked>
+                Active
+            </label>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="message"></div>
+        <hr>
+        <h2>All Key Codes</h2>
+        <ul id="keyCodeList"></ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
