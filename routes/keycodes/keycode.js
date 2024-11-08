@@ -33,15 +33,17 @@ router.get("/api/keycodes", async (req, res) => {
 
 // New Key Code Route
 router.post("/api/keycodes/newKeyCode", async (req, res) => {
+  console.log("Menerima POST ke /api/keycodes/newKeyCode dengan data:", req.body);
   const { keyCode, active, description } = req.body;
   if (!keyCode || typeof active !== "boolean" || !description) {
-    return res.status(400).json({ error: true, message: "keyCode, active, and description are required" });
+      return res.status(400).json({ error: true, message: "keyCode, active, and description are required" });
   }
   try {
-    const result = await keyCodeController.createNewKeyCode(keyCode, active, description);
-    res.status(201).json({ message: "Keycode added successfully", data: result });
+      const result = await keyCodeController.createNewKeyCode(keyCode, active, description);
+      res.status(201).json({ message: "Keycode added successfully", data: result });
   } catch (error) {
-    res.status(500).json({ error: true, message: "Failed to create keycode" });
+      console.log("Error saat menambahkan keycode:", error); // Log error
+      res.status(500).json({ error: true, message: "Failed to create keycode" });
   }
 });
 

@@ -11,6 +11,9 @@ const app = express();
 // Setup dotenv
 dotenv.config();
 
+// Cek apakah variabel DB_NAME berhasil dimuat
+console.log("Nama Database:", process.env.DB_NAME);
+
 // Middleware functions
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
